@@ -25,17 +25,3 @@ fun main() {
     println(part1(input))
     println(part2(input))
 }
-
-fun String.intValueRPS(): Int = when (this) {
-    "X", "A" -> 1
-    "B", "Y" -> 2
-    "C", "Z" -> 3
-    else -> throw IllegalArgumentException("Unknown value: $this")
-}
-
-fun countScoreResultRPS(opponentScore: Int, myScore: Int) =
-    when {
-        myScore > opponentScore -> 6
-        myScore == opponentScore -> 3
-        else -> 0
-    }

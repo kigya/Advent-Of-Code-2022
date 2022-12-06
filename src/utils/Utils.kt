@@ -5,10 +5,16 @@ import java.security.MessageDigest
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(day: Int): List<String> {
+fun readInputList(day: Int): List<String> {
     val dayStringValue = day.toString().padStart(2, '0')
-     return File("src/days/day${dayStringValue}", "Day${dayStringValue}.txt")
+    return File("src/days/day${dayStringValue}", "Day${dayStringValue}.txt")
         .readLines()
+}
+
+fun readInput(day: Int): String {
+    val dayStringValue = day.toString().padStart(2, '0')
+    return File("src/days/day${dayStringValue}", "Day${dayStringValue}.txt")
+        .readText()
 }
 
 /**
